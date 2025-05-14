@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Food Co-op</title>
+    <style>
+        @font-face {
+            font-family: homeSweetHome;
+            src: url("../font/Home_Sweet_Home.otf");
+        }
+        @font-face {
+            font-family: Curlz;
+            src: url("../font/curlzmt.ttf");
+        }
+        @font-face {
+            font-family: StitchWarior;
+            src: url("../font/StitchWarrior.ttf");
+        }
+        body {
+            background-color: #2a1bff;
+            font-family: homeSweetHome, Arial, sans-serif;
+            background-image: url("../img/dark-denim.png");
+            background-size: 290px 290px;
+        }
+        header {
+            text-align: center;
+            color:#ff7b00;
+        }
+        .playlist-table {
+            margin-left: auto;  
+            margin-right: auto;
+            text-align: left;
+            border-collapse: collapse;
+            font-family: homeSweetHome;
+            color:  #00FF00; 
+            background-color: #b7ff1b;
+            background-image: url("../img/dark-denim.png");
+
+            
+
+
+            td {
+                border-bottom: 0;
+            }
+            /* tr:nth-child(4n){
+                border-bottom: 1px solid #FF00FF;
+            } */
+            tr:nth-child(even){
+                text-align: center;
+                font-size: 0.8em;
+            }
+            th{
+                padding-left: 5px;
+                text-align: center;
+                color: #00FF00;
+                text-shadow:   -2px 0px 3px #FF00FF;
+            }
+        }
+        /* .num{
+            font-style: italic;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spring Playlist, 2024</h1>
+    </header>
+    <div class="playlist-table-container-div">
+
+            <table class="playlist-table">
+                <tr>
+                    <td class="num">1.</td>
+                    <td class="num">Lorelei</td>
+                    <th rowspan="8">DJ Dani on the beat</td>
+                </tr>
+                <tr>
+                    <td colspan="2">by Empress Of</td>
+                </tr>
+                <tr>
+                    <td class="num">2.</td>
+                    <td class="num">Golden God</td>
+                </tr>
+                <tr>
+                    <td colspan="2">by Bladee and Yung Lean</td>
+                </tr>
+                <tr>
+                    <td class="num">3.</td>
+                    <td class="num">B2b</td>
+                </tr>
+                <tr>
+                    <td colspan="2">by Charli XCX</td>
+                </tr>
+                <tr>
+                    <td class="num">4.</td>
+                    <td class="num">Forbidden Feelinz</td>
+                </tr>
+                <tr>
+                    <td colspan="2">by Nia Archives</td>
+                </tr>
+        </table>
+        <p style="text-align:center;"><a href="https://open.spotify.com/playlist/5SQOewXBFWjlwvMnCOEGYD?si=f156bad1a5bb46af">Spotify</a></p>
+    </div>
+    <footer>
+        <p>Return to <a href="../index.html">Food Co-op Home</a></p>
+        <p>&copy; 2025 Food Co-op</p>
+    </footer>
+</body>
+</html>
