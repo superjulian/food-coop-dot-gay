@@ -26,79 +26,118 @@
             text-align: center;
             color:#ff7b00;
         }
+
         .playlist-table {
-            margin-left: auto;  
-            margin-right: auto;
             text-align: left;
             border-collapse: collapse;
             font-family: homeSweetHome;
             color:  #00FF00; 
             background-color: #b7ff1b;
             background-image: url("../img/dark-denim.png");
-
-            
-
+            float: left;
+            margin: 5px;
+            border-radius: 9px;
 
             td {
                 border-bottom: 0;
+                padding: 3px;
             }
             /* tr:nth-child(4n){
                 border-bottom: 1px solid #FF00FF;
             } */
-            tr:nth-child(even){
+            .artist{
                 text-align: center;
                 font-size: 0.8em;
             }
+            .num{
+                text-align: right;
+            }
             th{
-                padding-left: 5px;
+                padding: 3px;
                 text-align: center;
-                color: #00FF00;
-                text-shadow:   -2px 0px 3px #FF00FF;
             }
         }
         /* .num{
             font-style: italic;
         } */
+        .links {
+            text-align: center;
+            clear: both;
+            float: none;
+
+        }
+        a {
+                color: #ff7b00;
+            }
+        h1 {
+            margin: 3px;
+        }
+        h2 {
+            font-size: 1em;
+            margin: 3px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Spring Playlist, 2024</h1>
+        <h1>Spring Playlist, 2025</h1>
+        <h2>(still collecting submissions)</h1>
+
     </header>
     <div class="playlist-table-container-div">
 
-            <table class="playlist-table">
-                <tr>
-                    <td class="num">1.</td>
-                    <td class="num">Lorelei</td>
-                    <th rowspan="8">DJ Dani on the beat</td>
-                </tr>
-                <tr>
-                    <td colspan="2">by Empress Of</td>
-                </tr>
-                <tr>
-                    <td class="num">2.</td>
-                    <td class="num">Golden God</td>
-                </tr>
-                <tr>
-                    <td colspan="2">by Bladee and Yung Lean</td>
-                </tr>
-                <tr>
-                    <td class="num">3.</td>
-                    <td class="num">B2b</td>
-                </tr>
-                <tr>
-                    <td colspan="2">by Charli XCX</td>
-                </tr>
-                <tr>
-                    <td class="num">4.</td>
-                    <td class="num">Forbidden Feelinz</td>
-                </tr>
-                <tr>
-                    <td colspan="2">by Nia Archives</td>
-                </tr>
-        </table>
-        <p style="text-align:center;"><a href="https://open.spotify.com/playlist/5SQOewXBFWjlwvMnCOEGYD?si=f156bad1a5bb46af">Spotify</a></p>
+            <div id="playlist-table-js"></div>
+            <script type="text/javascript" src="../data/spring-2025-playlist.js"></script>
+
+            <script>
+            const playlistList = playlistData;
+            for (let djIndex = 0; djIndex < playlistList.length; djIndex++) {
+                const { dj, songs } = playlistList[djIndex];
+                const { background_color, text_color } = colors[djIndex];
+                const table = document.createElement('table');
+                table.className = 'playlist-table';
+                table.style.backgroundColor = background_color;
+                table.style.color = text_color;
+                
+                
+                for (let i = 0; i < songs.length; i++) {
+                    const row1 = document.createElement('tr');
+                    const tdNum = document.createElement('td');
+                    tdNum.className = 'num';
+                    tdNum.textContent = djIndex * 4 + i + 1 + '.';
+                    row1.appendChild(tdNum);
+
+                    const tdTitle = document.createElement('td');
+                    tdTitle.className = 'title';
+                    tdTitle.textContent = songs[i].title;
+                    row1.appendChild(tdTitle);
+
+                    if (i === 0) {
+                        const thDJ = document.createElement('th');
+                        thDJ.rowSpan = songs.length * 2;
+                        thDJ.className = 'DJ';
+                        thDJ.textContent = "DJ " + dj;
+                        row1.appendChild(thDJ);
+                    }
+
+                    table.appendChild(row1);
+
+                    const row2 = document.createElement('tr');
+                    const tdArtist = document.createElement('td');
+                    tdArtist.className = 'artist';
+                    tdArtist.colSpan = 2;
+                    tdArtist.textContent = 'by ' + songs[i].artist;
+                    row2.appendChild(tdArtist);
+
+                    table.appendChild(row2);
+                }
+
+                document.getElementById('playlist-table-js').appendChild(table);
+            }
+            </script>
+    </div>
+    <div class="links">
+        <p><a href="https://open.spotify.com/playlist/39YZCmI4qJsfvdCBg2AB3K?si=tI4eajh9RrqpEpTMDERxBQ">Spotify</a></p>
     </div>
     <footer>
         <p>Return to <a href="../index.html">Food Co-op Home</a></p>
