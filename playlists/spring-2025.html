@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Food Co-op</title>
+    <style>
+        @font-face {
+            font-family: homeSweetHome;
+            src: url("../font/Home_Sweet_Home.otf");
+        }
+        @font-face {
+            font-family: Curlz;
+            src: url("../font/curlzmt.ttf");
+        }
+        @font-face {
+            font-family: StitchWarior;
+            src: url("../font/StitchWarrior.ttf");
+        }
+        body {
+            background-color: #2a1bff;
+            font-family: StitchWarior, Arial, sans-serif;
+            /* background-image: url("../img/dark-denim.png");
+            background-size: 290px 290px; */
+            /*             
+            background-image: url("../img/dark-denim-3.png");
+            background-size: 840px 652px; 2x
+             */
+            background-image: url("../img/dark-denim-3.png");
+        }
+        header {
+            text-align: center;
+            color:#ff7b00;
+        }
+
+        .playlist-table {
+            text-align: left;
+            border-collapse: collapse;
+            font-family: homeSweetHome;
+            color:  #00FF00; 
+            background-color: #b7ff1b;
+            background-image: url("../img/dark-denim.png");
+            float: left;
+            margin: 5px;
+            border-radius: 9px;
+            overflow: hidden;
+            word-wrap: break-word;
+            /* max-width: 400px; */
+
+            td {
+                border-bottom: 0;
+                padding: 3px;
+                padding-top: 0;
+            }
+
+            .artist{
+                text-align: center;
+                font-size: 0.8em;
+            }
+            .num{
+                text-align: right;
+            }
+            th{
+                padding: 3px;
+                text-align: center;
+                /* font-family: StitchWarior; */
+                font-size: 1.6em;
+            }
+        }
+        .links {
+            text-align: center;
+            clear: both;
+            float: none;
+
+        }
+        a {
+                color: #00d0ff;
+            }
+        h1 {
+            margin: 3px;
+            font-family: StitchWarior;
+
+        }
+        h2 {
+            font-size: 1em;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spring Playlist, 2025</h1>
+        <h2>(still collecting submissions)</h1>
+
+    </header>
+    <div class="playlist-table-container-div">
+
+            <div id="playlist-table-js"></div>
+            <script type="text/javascript" src="../data/spring-2025-playlist.js"></script>
+
+            <script>
+            const playlistList = playlistData;
+            for (let djIndex = 0; djIndex < playlistList.length; djIndex++) {
+                const { dj, songs } = playlistList[djIndex];
+                const { background_color, text_color } = colors[djIndex];
+                const table = document.createElement('table');
+                table.className = 'playlist-table';
+                table.style.backgroundColor = background_color;
+                table.style.color = text_color;
+                
+                const dj_row = document.createElement('tr');
+                const dj_item = document.createElement('th');
+                dj_item.className = 'dj';
+                dj_item.colSpan = 2;
+                dj_item.textContent = "DJ " + dj;
+                dj_row.appendChild(dj_item);
+                table.appendChild(dj_row);
+                for (let i = 0; i < songs.length; i++) {
+                    const row1 = document.createElement('tr');
+                    const tdNum = document.createElement('td');
+                    tdNum.className = 'num';
+                    tdNum.textContent = djIndex * 4 + i + 1 + '.';
+                    row1.appendChild(tdNum);
+
+                    const tdTitle = document.createElement('td');
+                    tdTitle.className = 'title';
+                    tdTitle.textContent = songs[i].title;
+                    row1.appendChild(tdTitle);
+
+                    // if (i === 0) {
+                    //     const thDJ = document.createElement('th');
+                    //     thDJ.rowSpan = songs.length * 2;
+                    //     thDJ.className = 'DJ';
+                    //     thDJ.textContent = "DJ " + dj;
+                    //     row1.appendChild(thDJ);
+                    // }
+
+                    table.appendChild(row1);
+
+                    const row2 = document.createElement('tr');
+                    const tdArtist = document.createElement('td');
+                    tdArtist.className = 'artist';
+                    tdArtist.colSpan = 2;
+                    tdArtist.textContent = 'by ' + songs[i].artist;
+                    row2.appendChild(tdArtist);
+
+                    table.appendChild(row2);
+                }
+
+                document.getElementById('playlist-table-js').appendChild(table);
+            }
+            </script>
+    </div>
+    <div class="links">
+        <p><a href="https://open.spotify.com/playlist/39YZCmI4qJsfvdCBg2AB3K?si=tI4eajh9RrqpEpTMDERxBQ">Spotify</a></p>
+    </div>
+    <footer>
+        <p>Return to <a href="../index.html">Food Co-op Home</a></p>
+        <p>&copy; 2025 Food Co-op</p>
+    </footer>
+</body>
+</html>
