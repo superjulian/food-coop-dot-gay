@@ -18,9 +18,14 @@
         }
         body {
             background-color: #2a1bff;
-            font-family: homeSweetHome, Arial, sans-serif;
-            background-image: url("../img/dark-denim.png");
-            background-size: 290px 290px;
+            font-family: StitchWarior, Arial, sans-serif;
+            /* background-image: url("../img/dark-denim.png");
+            background-size: 290px 290px; */
+            /*             
+            background-image: url("../img/dark-denim-3.png");
+            background-size: 840px 652px; 2x
+             */
+            background-image: url("../img/dark-denim-3.png");
         }
         header {
             text-align: center;
@@ -37,14 +42,16 @@
             float: left;
             margin: 5px;
             border-radius: 9px;
+            overflow: hidden;
+            word-wrap: break-word;
+            /* max-width: 400px; */
 
             td {
                 border-bottom: 0;
                 padding: 3px;
+                padding-top: 0;
             }
-            /* tr:nth-child(4n){
-                border-bottom: 1px solid #FF00FF;
-            } */
+
             .artist{
                 text-align: center;
                 font-size: 0.8em;
@@ -55,11 +62,10 @@
             th{
                 padding: 3px;
                 text-align: center;
+                /* font-family: StitchWarior; */
+                font-size: 1.6em;
             }
         }
-        /* .num{
-            font-style: italic;
-        } */
         .links {
             text-align: center;
             clear: both;
@@ -67,10 +73,12 @@
 
         }
         a {
-                color: #ff7b00;
+                color: #00d0ff;
             }
         h1 {
             margin: 3px;
+            font-family: StitchWarior;
+
         }
         h2 {
             font-size: 1em;
@@ -99,7 +107,13 @@
                 table.style.backgroundColor = background_color;
                 table.style.color = text_color;
                 
-                
+                const dj_row = document.createElement('tr');
+                const dj_item = document.createElement('th');
+                dj_item.className = 'dj';
+                dj_item.colSpan = 2;
+                dj_item.textContent = "DJ " + dj;
+                dj_row.appendChild(dj_item);
+                table.appendChild(dj_row);
                 for (let i = 0; i < songs.length; i++) {
                     const row1 = document.createElement('tr');
                     const tdNum = document.createElement('td');
@@ -112,13 +126,13 @@
                     tdTitle.textContent = songs[i].title;
                     row1.appendChild(tdTitle);
 
-                    if (i === 0) {
-                        const thDJ = document.createElement('th');
-                        thDJ.rowSpan = songs.length * 2;
-                        thDJ.className = 'DJ';
-                        thDJ.textContent = "DJ " + dj;
-                        row1.appendChild(thDJ);
-                    }
+                    // if (i === 0) {
+                    //     const thDJ = document.createElement('th');
+                    //     thDJ.rowSpan = songs.length * 2;
+                    //     thDJ.className = 'DJ';
+                    //     thDJ.textContent = "DJ " + dj;
+                    //     row1.appendChild(thDJ);
+                    // }
 
                     table.appendChild(row1);
 
