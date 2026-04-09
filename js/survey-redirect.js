@@ -1,1 +1,1 @@
-window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSefz54R-Qwz9IUkXHBuTX48lovrkCVGNySbhRxHhczoumEdjw/viewform';
+window.location.href = 'https://cryptpad.fr/form/#/2/form/view/Xg7Xff8ASoC27WmDgXPMyAtQH8ECiq8WWECAm2rP7Ok/';
