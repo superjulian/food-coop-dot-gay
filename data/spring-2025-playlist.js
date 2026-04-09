@@ -141,7 +141,58 @@ const playlistData = [
                 { title: "Wifey Riddim", artist: "Shygirl, Club Shy, Jorja Smith, SadBoi" },
             ]
     },
+      { 
+    	dj: "DJ pud",
+         songs:
+             [
+                 { title: "Eclipse of the Moon", artist: "Tony, Caro & John" },
+                 { title: "Doctor", artist: "Teen Mortgage" },
+                 { title: "Dancing in the club", artist: "MJ Lenderman + This is Lorelei" },
+                 { title: "Dollar Store", artist: "Ben Kweller + Waxahatchee" },
+             ]
+     },
+	{ 
+    	dj: "iris the virus",
+         songs:
+             [
+                 { title: "Felicità", artist: "Al Bano and Romina Power" },
+                 { title: "A Gira", artist: "Trio Ternura" },
+                 { title: "That’s Us/Wild Combination", artist: "Arthur Russell" },
+                 { title: "Out From Under", artist: "Britney Spears" },
+             ]
+     }, 
+      { 
+    	dj: "Big D",
+         songs:
+             [
+                 { title: "Our house", artist: "madness" },
+                 { title: "2 become 1", artist: "spice girls" },
+                 { title: "I know you know", artist: "Bonnie light horseman" },
+                 { title: "Shit sheise merde pt 1 & 2", artist: "!!!" },
+             ]
+     }, 
+      { 
+    	dj: "DJ frightened",
+         songs:
+             [
+                 { title: "Concussion", artist: "Girlhouse" },
+                 { title: "Everyone’s in love with you", artist: "David Byrne" },
+                 { title: "Ci sarà", artist: "Al Bano and Romina Power" },
+                 { title: "Soft Shock", artist: "Yeah Yeah Yeahs" },
+             ]
+     }, 
+      { 
+    	dj: "Psychic Damage",
+         songs:
+             [
+                 { title: "Shark Brain", artist: "Eartheater" },
+                 { title: "Girls Fall Out Tha Sky", artist: "Pink Siifu" },
+                 { title: "U R UR ONLY ACHING", artist: "caroline" },
+                 { title: "Huayño \“Phuju\"", artist: "Los Thuthanaka" },
+             ]
+     }, 
 ]
+
     //  { 
     //     dj: "",
     //     songs:
@@ -216,5 +267,17 @@ const colors = [
     {
         text_color: "#008080",
         background_color: "#ffffff",
+    },
+    {
+	text_color: "#90E0EF", 
+	background_color: "#CC5500",
+    },
+    {
+	text_color: "#FDE6E0",
+	background_color: "#691300",
+    },
+    {
+	text_color: "#363737", 
+	background_color: "#90E0EF",
     }
 ]
